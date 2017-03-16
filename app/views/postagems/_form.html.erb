@@ -1,0 +1,13 @@
+<%= form_for @postagem do |f| %>
+<p>
+<%= f.label :titulo %>
+<%= f.text_field :titulo %>
+</p>
+<p>
+<%= f.label :conteudo %>
+<%= f.text_field :conteudo %>
+</p>
+<p>
+<%= f.submit %>
+</p>
+<% end %>

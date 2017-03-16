@@ -1,4 +1,4 @@
-class PostagemController < ApplicationController
+class PostagemsController < ApplicationController
   # chama a view por default no users new (caso não especificado)
 
   def show
@@ -9,15 +9,15 @@ class PostagemController < ApplicationController
     @postagem = Postagem.new
   end
 
-  # def create
-  #   @postagem = User.new(user_params)
-  #   if @postagem.save
-  #     redirect_to @user,
-  #                 notice: 'Cadastro criado com sucesso!'
-  #   else
-  #     render action: :new
-  #   end
-  # end
+  def create
+    @postagem = Postagem.new(postagem_params)
+    if @postagem.save
+      redirect_to @postagem,
+                  notice: 'Postagem criada com sucesso!'
+    else
+      render action: :new
+    end
+  end
   #
   # def edit
   #   @user = User.find(params[:id])
@@ -33,13 +33,12 @@ class PostagemController < ApplicationController
   #     end
   # end
   #
-  # private
-  #
-  # def user_params
-  #   params.
-  #   require(:user).
-  #   permit(:email, :full_name, :location, :password,
-  #             :password_confirmation, :bio)
-  # end
+  private
+
+  def postagem_params
+    params.
+    require(:postagem).
+    permit(:titulo, :conteudo)
+  end
 
 end
