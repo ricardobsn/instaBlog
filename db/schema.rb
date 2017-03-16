@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315152733) do
+ActiveRecord::Schema.define(version: 20170316183109) do
 
   create_table "postagems", force: :cascade do |t|
     t.string   "titulo"
     t.text     "conteudo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "subtitulo"
+    t.string   "usuario"
+    t.string   "data"
   end
 
 end

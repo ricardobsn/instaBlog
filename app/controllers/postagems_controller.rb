@@ -38,7 +38,7 @@ class PostagemsController < ApplicationController
   def postagem_params
     params.
     require(:postagem).
-    permit(:titulo, :conteudo)
+    permit(:titulo, :subtitulo, :conteudo, :usuario, :data)
   end
 
 end
