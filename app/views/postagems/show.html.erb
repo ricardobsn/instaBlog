@@ -1,5 +1,13 @@
-<h1><%=@postagem.titulo %> </h1>
-<ul>
-    <li><%=@postagem.conteudo %> </li>
-</ul>
-<%= link_to 'Editar Postagem', edit_postagem_path(@postagem) %>
+<html>
+  <head>
+    <title><%= @postagem.titulo %></title>
+    <h1><%= @postagem.subtitulo %> </h1>
+  </head>
+  <body>
+    <ul>
+        <li><%= @postagem.conteudo %> </li>
+        <li><%= @postagem.usuario %> </li>
+        <li><%= @postagem.data %> </li>
+    </ul>
+  </body>
+</html>
