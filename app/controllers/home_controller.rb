@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @postagems = Postagem.all
+    @postagems = Postagem.take(8)
   end
 end

@@ -1,6 +1,10 @@
 class PostagemsController < ApplicationController
   # chama a view por default no users new (caso não especificado)
 
+  def index
+    @postagems = Postagem.all
+  end
+
   def show
     @postagem = Postagem.find(params[:id])
   end
