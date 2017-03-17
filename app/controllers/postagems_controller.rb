@@ -16,12 +16,13 @@ class PostagemsController < ApplicationController
   def create
     @postagem = Postagem.new(postagem_params)
     if @postagem.save
-      redirect_to @postagem,
+      redirect_to root_path,
                   notice: 'Postagem criada com sucesso!'
     else
       render action: :new
     end
   end
+
   #
   # def edit
   #   @user = User.find(params[:id])
