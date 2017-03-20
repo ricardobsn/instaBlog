@@ -16,28 +16,32 @@ class PostagemsController < ApplicationController
   def create
     @postagem = Postagem.new(postagem_params)
     if @postagem.save
-      redirect_to root_path,
-                  notice: 'Postagem criada com sucesso!'
+      redirect_to root_path
     else
       render action: :new
     end
   end
 
-  #
-  # def edit
-  #   @user = User.find(params[:id])
-  # end
-  #
-  # def update
-  #   @user = User.find(params[:id])
-  #     if @user.update(user_params)
-  #       redirect_to @user,
-  #       notice: 'Cadastro atualizado com sucesso!'
-  #     else
-  #       render action: :edit
-  #     end
-  # end
-  #
+
+  def edit
+    @postagem = Postagem.find(params[:id])
+  end
+
+  def update
+    @postagem = Postagem.find(params[:id])
+      if @postagem.update(postagem_params)
+        redirect_to root_path
+      else
+        render action: :edit
+      end
+  end
+
+  def destroy
+    id = params[:id]
+    Postagem.destroy id
+    redirect_to root_path
+  end
+
   private
 
   def postagem_params

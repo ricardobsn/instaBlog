@@ -54,12 +54,11 @@
   <%= f.label :conteúdo %>
   <%= f.text_area :conteudo, class: "form-control", rows: 4 %>
   </p>
-  <div class="form-inline">
     <div class="form-group">
     <%= f.label :usuário %>
     <%= f.text_field :usuario %>
-    <%= f.submit "Criar", class: "btn btn-primary" %>
     </div>
-  </div>
+  <%= f.submit "Postar", class: "btn btn-primary" %>
+
   <% end %>
 </div>
