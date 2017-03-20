@@ -65,13 +65,13 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('assets/home-bg.jpg')">
+    <header class="intro-header" style="background-image: url('assets/m4u.png')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>M4UBlog</h1>
-                        <hr class="small">
+                        <!-- <h1>M4UBlog</h1> -->
+                        <!-- <hr class="small"> -->
                         <!-- <span class="subheading">A Clean Blog Theme by Start Bootstrap</span> -->
                     </div>
                 </div>
@@ -83,7 +83,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                 <% @postagems.each do |postagem| %>
+                 <% @postagems.reverse_each do |postagem| %>
                   <div class="post-preview">
                       <a href="./postagems/<%= postagem.id %>" >
                           <h2 class="post-title">
