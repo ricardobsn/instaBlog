@@ -38,27 +38,47 @@
     </div>
 </header>
 
-
-
-<div class="container">
-  <%= form_for @postagem do |f| %>
-  <p>
-  <%= f.label :título %>
-  <%= f.text_field :titulo, class: "form-control"  %>
-  </p>
-  <p>
-  <%= f.label :subtítulo %>
-  <%= f.text_field :subtitulo, class: "form-control" %>
-  </p>
-  <p>
-  <%= f.label :conteúdo %>
-  <%= f.text_area :conteudo, class: "form-control", rows: 4 %>
-  </p>
-    <div class="form-group">
-    <%= f.label :usuário %>
-    <%= f.text_field :usuario %>
-    </div>
-  <%= f.submit "Postar", class: "btn btn-primary" %>
-
-  <% end %>
-</div>
+ <div class="container">
+   <div class="row">
+       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <p>Escreva sua notícia</p>
+           <%= form_for @postagem do |f| %>
+           <div class="row control-group">
+               <div class="form-group col-xs-12 floating-label-form-group controls">
+                   <%= f.label :título %>
+                   <%= f.text_field :titulo %>
+                   <p class="help-block text-danger"></p>
+               </div>
+           </div>
+           <div class="row control-group">
+               <div class="form-group col-xs-12 floating-label-form-group controls">
+                  <%= f.label :subtítulo %>
+                  <%= f.text_field :subtitulo %> 
+                   <p class="help-block text-danger"></p>
+               </div>
+           </div>
+           <div class="row control-group">
+               <div class="form-group col-xs-12 floating-label-form-group controls">
+                   <%= f.label :usuario %>
+                   <input type="text_area" value="<%= @postagem.usuario %>" class="form-control" placeholder="Usuário" id="usuario" required data-validation-required-message="Insira o seu nome">
+                   <p class="help-block text-danger"></p>
+               </div>
+           </div>
+           <div class="row control-group">
+               <div class="form-group col-xs-12 floating-label-form-group controls">
+                 <%= f.label :conteúdo %>
+                 <%= f.text_field :conteudo %>
+                   <p class="help-block text-danger"></p>
+               </div>
+           </div>
+            <br>
+             <div id="success"></div>
+             <div class="row">
+                 <div class="form-group col-xs-12">
+                     <button type="submit" class="btn btn-default">Enviar</button>
+                 </div>
+             </div>
+          <% end %>
+       </div>
+   </div>
+ </div>
