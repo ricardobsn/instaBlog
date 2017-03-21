@@ -29,9 +29,8 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h2>Novo Post</h2>
+                    <h2>Escreva sua Notícia</h2>
                     <hr class="small">
-                    <!-- <span class="subheading">A Clean Blog Theme by Start Bootstrap</span> -->
                 </div>
             </div>
         </div>
@@ -41,33 +40,35 @@
  <div class="container">
    <div class="row">
        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <p>Escreva sua notícia</p>
+          <!-- <p>Escreva sua notícia</p> -->
            <%= form_for @postagem do |f| %>
            <div class="row control-group">
                <div class="form-group col-xs-12 floating-label-form-group controls">
                    <%= f.label :título %>
-                   <%= f.text_field :titulo %>
+                   <%= f.text_field :titulo, placeholder: 'Insira o Título'%>
                    <p class="help-block text-danger"></p>
                </div>
            </div>
            <div class="row control-group">
                <div class="form-group col-xs-12 floating-label-form-group controls">
                   <%= f.label :subtítulo %>
-                  <%= f.text_field :subtitulo %> 
+                  <%= f.text_field :subtitulo, placeholder: 'Insira o Subtítulo'%>
                    <p class="help-block text-danger"></p>
                </div>
            </div>
            <div class="row control-group">
                <div class="form-group col-xs-12 floating-label-form-group controls">
                    <%= f.label :usuario %>
-                   <input type="text_area" value="<%= @postagem.usuario %>" class="form-control" placeholder="Usuário" id="usuario" required data-validation-required-message="Insira o seu nome">
+                   <%= f.text_field :usuario, placeholder: 'Usuário'%>
                    <p class="help-block text-danger"></p>
                </div>
            </div>
            <div class="row control-group">
                <div class="form-group col-xs-12 floating-label-form-group controls">
                  <%= f.label :conteúdo %>
-                 <%= f.text_field :conteudo %>
+                 <%= f.text_field :conteudo, placeholder: 'Insira o Conteúdo'%>
+                   <p class="h#<Am-group col-xs-12 floating-label-form-group controls">
+                <%= f.file_field :picture %>
                    <p class="help-block text-danger"></p>
                </div>
            </div>

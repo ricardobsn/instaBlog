@@ -10,16 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317134513) do
+ActiveRecord::Schema.define(version: 20170321123522) do
 
   create_table "postagems", force: :cascade do |t|
     t.string   "titulo"
     t.text     "conteudo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "subtitulo"
     t.string   "usuario"
     t.string   "data"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
 end

@@ -14,10 +14,17 @@ class PostagemsController < ApplicationController
   end
 
   def create
-    @postagem = Postagem.new(postagem_params)
+    uploaded_io = params[:postagem][:picture]
+    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+      file.write(uploaded_io.read)
+    end
+    other_params = postagem_params
+    other_params[:photo_file_name]= uploaded_io.original_filename
+    @postagem = Postagem.new(other_params)
     if @postagem.save
       redirect_to root_path
     else
+      p 'treta', @postagem.errors
       render action: :new
     end
   end
@@ -42,12 +49,12 @@ class PostagemsController < ApplicationController
     redirect_to root_path
   end
 
-  private
 
   def postagem_params
     params.
     require(:postagem).
-    permit(:titulo, :subtitulo, :conteudo, :usuario, :data)
+    permit(:titulo, :subtitulo, :conteudo, :usuario, :data).
+    except(:picture)
   end
 
 end
