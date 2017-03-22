@@ -121,6 +121,7 @@ hr.small {
     -moz-transition: -moz-transform 0.3s;
     transition: transform 0.3s;
   }
+
   .navbar-custom.is-fixed .navbar-brand {
     color: #333333;
   }
