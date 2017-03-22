@@ -1,6 +1,6 @@
 module PostagemsHelper
   def post_date(date)
-    # formatting date: Aug, 31 2007 - 9:55PM
-    date.strftime("em %b, %m %Y - %H:%M")
+    # formatting date: 31, Aug 2007 - 9:55PM
+    date.strftime("em %m, %b %Y - %H:%M")
   end
 end

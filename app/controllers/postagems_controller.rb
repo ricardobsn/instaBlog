@@ -19,12 +19,11 @@ class PostagemsController < ApplicationController
       file.write(uploaded_io.read)
     end
     other_params = postagem_params
-    other_params[:photo_file_name]= uploaded_io.original_filename
+    other_params[:photo_file_name]= check_image_nil uploaded_io.original_filename
     @postagem = Postagem.new(other_params)
     if @postagem.save
       redirect_to root_path
     else
-      p 'treta', @postagem.errors
       render action: :new
     end
   end
@@ -56,5 +55,13 @@ class PostagemsController < ApplicationController
     permit(:titulo, :subtitulo, :conteudo, :usuario, :data).
     except(:picture)
   end
+
+  def check_image_nil(name)
+    if name.empty?
+      name = 'post-bg.jpg'
+    end
+    name
+  end
+
 
 end
