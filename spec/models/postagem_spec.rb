@@ -1,3 +1,4 @@
+require 'rails_helper'
 # == Schema Information
 #
 # Table name: postagems
@@ -16,11 +17,21 @@
 #  photo_updated_at   :datetime
 #
 
-class Postagem < ApplicationRecord
+  #   t.string   "titulo"
+  #   t.text     "conteudo"
+  #   t.datetime "created_at",         null: false
+  #   t.datetime "updated_at",         null: false
+  #   t.string   "subtitulo"
+  #   t.string   "usuario"
+  #   t.string   "data"
+  #   t.string   "photo_file_name"
 
-validates :titulo, presence: true
-validates :conteudo, presence: true
-validates :photo_file_name, presence: true
-validates :conteudo, presence: true
+RSpec.describe Postagem, type: :model do
 
+  describe 'Fields' do
+
+    it do
+      is_expected.to have_db_column(:titulo).of_type(:string).with_options(null: false)
+    end
+  end
 end
