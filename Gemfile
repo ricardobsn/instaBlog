@@ -28,6 +28,8 @@ group :development, :test do
   gem 'annotate'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'simplecov'
+  gem 'simplecov-rcov'
   gem 'byebug', platform: :mri
 end
 

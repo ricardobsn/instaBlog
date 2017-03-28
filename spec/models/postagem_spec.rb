@@ -17,21 +17,28 @@ require 'rails_helper'
 #  photo_updated_at   :datetime
 #
 
-  #   t.string   "titulo"
-  #   t.text     "conteudo"
-  #   t.datetime "created_at",         null: false
-  #   t.datetime "updated_at",         null: false
-  #   t.string   "subtitulo"
-  #   t.string   "usuario"
-  #   t.string   "data"
-  #   t.string   "photo_file_name"
-
 RSpec.describe Postagem, type: :model do
 
   describe 'Fields' do
 
     it do
-      is_expected.to have_db_column(:titulo).of_type(:string).with_options(null: false)
+      is_expected.to have_db_column(:titulo).of_type(:string).with_options(null: true)
+    end
+
+    it do
+      is_expected.to have_db_column(:conteudo).of_type(:text).with_options(null: true)
+    end
+
+    it do
+      is_expected.to have_db_column(:subtitulo).of_type(:string).with_options(null: true)
+    end
+
+    it do
+      is_expected.to have_db_column(:usuario).of_type(:string).with_options(null: true)
+    end
+
+    it do
+      is_expected.to have_db_column(:photo_file_name).of_type(:string).with_options(null: true)
     end
   end
 end
